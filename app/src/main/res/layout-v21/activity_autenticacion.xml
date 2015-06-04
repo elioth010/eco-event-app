@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.bytesw.consultadecuentas.view.activity.AutenticacionActivity" >
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/widget_toolbar" />
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_autenticar"
+        android:layout_alignEnd="@+id/edit_username"
+        android:layout_alignLeft="@+id/edit_username"
+        android:layout_alignRight="@+id/edit_username"
+        android:layout_alignStart="@+id/edit_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_action_secure"
+        android:drawableStart="@drawable/ic_action_secure"
+        android:elevation="2dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/divider"
+        android:theme="@style/AppBaseThemeDark" />
+
+    <EditText
+        android:id="@+id/edit_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_password"
+        android:layout_alignLeft="@+id/button_autenticar"
+        android:layout_alignRight="@+id/button_autenticar"
+        android:layout_marginBottom="8dp"
+        android:drawableLeft="@drawable/ic_action_people"
+        android:drawableStart="@drawable/ic_action_people"
+        android:elevation="2dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:hint="Usuario"
+        android:imeOptions="flagNoFullscreen"
+        android:inputType="text"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/divider"
+        android:theme="@style/AppBaseThemeDark" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button_autenticar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/custom_button"
+        android:minHeight="48dip"
+        android:minWidth="300dip"
+        android:onClick="userAuthentication"
+        android:text="@string/app_screns_login_title"
+        android:textColor="@color/icons" />
+
+</RelativeLayout>
