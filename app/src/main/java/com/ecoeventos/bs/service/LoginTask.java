@@ -1,4 +1,4 @@
-package com.bytesw.consultadecuentas.bs.service;
+package com.ecoeventos.bs.service;
 
 import java.io.IOException;
 import java.net.ConnectException;
@@ -12,6 +12,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
@@ -20,14 +22,16 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.util.Log;
 
-import com.bytesw.consultadecuentas.R;
-import com.bytesw.consultadecuentas.eis.bo.UserToken;
-import com.bytesw.consultadecuentas.security.SessionManager;
-import com.bytesw.consultadecuentas.view.activity.AbstractActivity;
-import com.bytesw.consultadecuentas.view.activity.CardViewActivity;
+import com.ecoeventos.R;
+import com.ecoeventos.eis.bo.UserToken;
+import com.ecoeventos.eis.dto.UserDTO;
+import com.ecoeventos.security.SessionManager;
+import com.ecoeventos.view.activity.AbstractActivity;
+import com.ecoeventos.view.activity.CardViewActivity;
+import com.ecoeventos.view.activity.MainActivity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class LoginTask extends AbstractGetTask<Void, Void, Void> {
+public class LoginTask extends AbstractGetTask<Void, Void, UserDTO> {
 
 	private static final String TAG = "LoginTask";
 	protected AbstractActivity parentActivity;
@@ -53,26 +57,24 @@ public class LoginTask extends AbstractGetTask<Void, Void, Void> {
 	}
 
 	@Override
-	protected Void doInBackground(Void... params) {
+	protected UserDTO doInBackground(Void... params) {
+		ResponseEntity<UserDTO> response=null;
 		try {
-			final String url = super.BASE_URL+"/oauth/token?grant_type=" + this.grantType + "&scope=" + this.scope;
+			final String url = super.BASE_URL + "/login/login?username="+user+"&password="+getMD5(password);
 			RestTemplate restTemplate = new RestTemplate(super.clientHttpRequestFactory());
-			ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<String>(getHeaders(this.user, this.password)), String.class);
-			Map<String, String> tokenInfo = fetchToken(restTemplate, response);
-
+			// Create the request body as a MultiValueMap
+			response = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<Object>(null), UserDTO.class);
 			SessionManager manager = this.parentActivity.getSession();
-			manager.setToken(tokenInfo.get("token"));
-			manager.setUser(user);
-			manager.setTokenType(tokenInfo.get("tokenType"));
-			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-			UserToken userLogged = new UserToken(1, user, manager.getToken(), manager.getTokenType(), dateFormat.format(new GregorianCalendar().getTime()));
-			this.parentActivity.save(userLogged);
+			manager.setUsername(user);
+			manager.setId(response.getBody().getId());
+			return response.getBody();
 		} catch (Exception ex) {
+			ex.printStackTrace();
 			if (ex instanceof ResourceAccessException) {
 				if (ex.getCause() instanceof ConnectException) {
 					onError(this.parentActivity.getResources().getString(R.string.app_toast_error_server_connection_message), ex, true);
 					return null;
-				}else if(ex.getCause() instanceof ConnectTimeoutException){
+				} else if (ex.getCause() instanceof ConnectTimeoutException) {
 					onError(this.parentActivity.getResources().getString(R.string.app_toast_error_server_timeout_message), ex, true);
 					return null;
 				}
@@ -89,51 +91,23 @@ public class LoginTask extends AbstractGetTask<Void, Void, Void> {
 			}
 		}
 
-		return null;
+		return response.getBody();
 	}
-
-	private Map<String, String> fetchToken(RestTemplate restTemplate, ResponseEntity<String> response) throws IOException {
-		HashMap<?, ?> myMap;
-		ObjectMapper objectMapper = new ObjectMapper();
-		String token = null;
-		String tokenType = null;
-		String userID = null;
-		try {
-			myMap = objectMapper.readValue(response.getBody().toString(),HashMap.class);
-			System.out.println("Map: " + myMap);
-			token = (String) myMap.get("access_token");
-			tokenType = (String) myMap.get("token_type");
-			userID = (String) myMap.get("user_id");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		Map<String, String> tokenInfo = new HashMap<String, String>();
-		tokenInfo.put("token", token);
-		tokenInfo.put("tokenType", tokenType);
-		tokenInfo.put("userId", userID);
-
-		Intent intent = new Intent(this.parentActivity, CardViewActivity.class);
-		this.parentActivity.startActivity(intent);
-		this.parentActivity.finish();
-		try {
-			this.finalize();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// System.out.println("Token: " + token);
-		return tokenInfo;
-	}
-
 	@Override
-	protected void onPostExecute(Void result) {
+	protected void onPostExecute(UserDTO result) {
 		dialog.cancel();
-		try {
-			this.finalize();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(result!=null) {
+			try {
+				Intent intent = new Intent(parentActivity, MainActivity.class);
+				parentActivity.startActivity(intent);
+				parentActivity.finish();
+				this.finalize();
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			onError(this.parentActivity.getResources().getString(R.string.app_toast_error_login_message), null, true);
 		}
 	}
 

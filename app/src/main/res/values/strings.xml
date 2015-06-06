@@ -12,6 +12,9 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="resouce_name">Nombre Apellido</string>
+    <string name="resouce_secondary_text">11384451</string>
+
     <string-array name="navigation_menu_items">
         <item>Cuentas</item>
     </string-array>
@@ -37,6 +40,14 @@
     <string name="app_textview_result_name">Nombre:</string>
     <string name="app_textview_result_code">C&#243;digo:</string>
     <string name="app_screns_login_title">Login</string>
+
+    <string name="app_button_see_event_title">Ver Eventos</string>
+    <string name="app_button_create_event_title">Crear Evento</string>
+    <string name="app_button_register_title">Registrarse</string>
+    <string name="app_button_out_app">Salir</string>
+
+    <string name="app_screens_menu_title">Menu Principal</string>
+
     <string name="app_screns_logout_title">Logout</string>
     <string name="app_button_logout">Cerrar Sesi&#243;n</string>
     <string name="app_alert_logout_title">Cerrar sesi&#243;n?</string>

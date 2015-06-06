@@ -5,5 +5,8 @@
         app:showAsAction="withText|ifRoom" />
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+        <item android:id="@+id/logout_task"
+        android:showAsAction="always"
+        android:title="@string/app_screns_logout_title"/>
 </menu>
 <!-- From: file:/home/elioth010/AndroidStudioProjects/EcoEventos/app/src/main/res/menu/main.xml -->

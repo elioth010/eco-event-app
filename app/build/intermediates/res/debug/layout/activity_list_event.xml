@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/widget_toolbar" />
+
+    <include android:id="@+id/recyclerview_list"
+        layout="@layout/fragment_recyclerview"
+        android:layout_below="@+id/include_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </include>
+
+</RelativeLayout><!-- From: file:/home/elioth010/AndroidStudioProjects/EcoEventos/app/src/main/res/layout/activity_list_event.xml -->

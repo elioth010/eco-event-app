@@ -1,11 +1,10 @@
-package com.bytesw.consultadecuentas.bs.dao.impl;
+package com.ecoeventos.bs.dao.impl;
+
+import com.ecoeventos.bs.dao.SugarDAO;
+import com.ecoeventos.eis.bo.BaseBO;
+import com.orm.query.Select;
 
 import java.util.List;
-
-import com.bytesw.consultadecuentas.bs.dao.SugarDAO;
-import com.bytesw.consultadecuentas.eis.bo.BaseBO;
-import com.orm.SugarRecord;
-import com.orm.query.Select;
 
 public class SugarDAOImpl implements SugarDAO {
 

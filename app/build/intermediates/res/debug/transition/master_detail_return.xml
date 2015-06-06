@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="together">
+    <changeImageTransform/>
+<!--     <transition class="com.bytesw.consultadecuentas.view.transition.Scale"> -->
+<!--         <targets> -->
+<!--             <target android:targetId="@id/fab" /> -->
+<!--         </targets> -->
+<!--     </transition> -->
+    <transitionSet android:transitionOrdering="sequential">
+        <changeImageTransform/>
+        <transition class="com.bytesw.consultadecuentas.view.transition.Fold">
+            <targets>
+                <target android:targetId="@id/relativeLayout1" />
+            </targets>
+        </transition>
+        <transitionSet android:transitionOrdering="together" >
+            <changeImageTransform/>
+            <transition class="com.bytesw.consultadecuentas.view.transition.Fold">
+                <targets>
+                    <target android:targetId="@id/container" />
+                </targets>
+            </transition>
+            <fade>
+               <targets>
+                    <target android:targetId="@id/card_product_money_available_value" />
+                    <target android:targetId="@id/card_product_money_available" />
+                    <target android:targetId="@id/card_product_money_reserve" />
+                    <target android:targetId="@id/card_product_money_reserve_value" />
+                    <target android:targetId="@id/card_product_money_accountant_value"/>
+                    <target android:targetId="@id/card_product_money_accountant"/>
+                    <target android:targetId="@id/card_product_money_withholding"/>
+                    <target android:targetId="@id/card_product_money_withholding_value"/>
+                </targets>
+            </fade>
+        </transitionSet>
+    </transitionSet>
+</transitionSet><!-- From: file:/home/elioth010/AndroidStudioProjects/EcoEventos/app/src/main/res/transition/master_detail_return.xml -->

@@ -1,4 +1,4 @@
-package com.bytesw.consultadecuentas.view.res;
+package com.ecoeventos.view.res;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,7 +18,7 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.bytesw.consultadecuentas.R;
+import com.ecoeventos.R;
 
 /**
  * 

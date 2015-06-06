@@ -1,4 +1,4 @@
-package com.bytesw.consultadecuentas.view.beans;
+package com.ecoeventos.view.beans;
 
 public class NavigationItemBean {
 	

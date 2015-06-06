@@ -1,6 +1,6 @@
-package com.bytesw.consultadecuentas.bs.service.sugar;
+package com.ecoeventos.bs.service.sugar;
 
-import com.bytesw.consultadecuentas.eis.bo.BaseBO;
+import com.ecoeventos.eis.bo.BaseBO;
 
 import java.util.List;
 

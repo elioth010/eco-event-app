@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.3/527fece4f23a457070a36c371a26d6c0208e1c3/jackson-annotations-2.2.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0527fece4f23a457070a36c371a26d6c0208e1c3">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.2.3-cfc2247913c72bf8f64e81238fe03bc1b7d6efa2.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b017100da14f9c158c9f5f2f508333c224b24a7c">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-d48c9b550cd30d6dfcda7128d13d337be560d9a5.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.3/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="07e07903922250dabf50c7d131d6fa069a050305">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-52045fd615a8285bd3ef06a5d2fadb0d8f4a2753.jar" />
+    </item>
+    <item
+        jar="/opt/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-6c65792006388da2efccd216622980462e31ba08.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.7.2/89490d2faf30a596b6d0373ca980cd0303c0d1da/jackson-core-asl-1.7.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="89490d2faf30a596b6d0373ca980cd0303c0d1da">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/jackson-core-asl-1.7.2-4d8e5a50c8cabe44c3b4e5c5c1cd1120052224f7.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.3/1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14/jackson-core-2.2.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.3-24ae3aba8c7f0957b866f70f51a315c6ea7963f2.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.3/3ae380888029daefb91d3ecdca3a37d8cb92bc9/jackson-databind-2.2.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="03ae380888029daefb91d3ecdca3a37d8cb92bc9">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/jackson-databind-2.2.3-5f485299c17f149580ff6041a220a5246d3fb682.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-1b125f02c6acb1ac88532da710802e5a148c6ae6.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/org.springframework.android/spring-android-rest-template/2.0.0.M1/6abb1e22445a4e4571c74632804e4179b43d82b5/spring-android-rest-template-2.0.0.M1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6abb1e22445a4e4571c74632804e4179b43d82b5">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/spring-android-rest-template-2.0.0.M1-56184db8a4d52dfcf240306f639935413e6bcb3d.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9742ced04aafd9ac97dd2c66c1aa0e32d2ae7e54">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-2cbd0cbcc29d4e29ffd5d8693a7b9103cd81422e.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/library-2.4.0-05849da37bc1d4b64fffab9cda5e92659fb0d7d0.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.github.ksoichiro/android-observablescrollview/1.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="010ee9e87a286afcaeaed368dcf829e42d0aa2a0">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-43b26d342de4c190d9c88d8b2c2277efd0448f55.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/jars/libs/internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-82b721ad4e48ea2091568e02f6891df2fcb47612.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.2/397f4731a9f9b6eb1907e224911c77ea3aa27a8b/commons-codec-1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="397f4731a9f9b6eb1907e224911c77ea3aa27a8b">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/commons-codec-1.2-3d43f1ce6b251bbc922ed62ecb47f6cdcc6329e8.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-d9343334fd7493924d436eaf2f5952e573a0fd59.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.2/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4796f18d3750bf2bfa078407a94a7f9db35b440d">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/classes-230143f30eddfbb8a5a3151dea5b2decc50cda1c.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/org.springframework.android/spring-android-core/2.0.0.M1/26b2d3262a0c5f8de663deeb6481d132d871fffa/spring-android-core-2.0.0.M1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="26b2d3262a0c5f8de663deeb6481d132d871fffa">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/spring-android-core-2.0.0.M1-13ece140952de9cd1f0925ce25e9dc4fb2c98e11.jar" />
+    </item>
+    <item
+        jar="/home/elioth010/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.7.2/efeaa6e0b011c4ecdbe8e957e9fa0c54881dfe18/jackson-mapper-asl-1.7.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="efeaa6e0b011c4ecdbe8e957e9fa0c54881dfe18">
+        <dex dex="/home/elioth010/AndroidStudioProjects/EcoEventos/app/build/intermediates/pre-dexed/debug/jackson-mapper-asl-1.7.2-3226aaa28728d1f1ee35a1aa1172aa0b76116af7.jar" />
+    </item>
+
+</items>

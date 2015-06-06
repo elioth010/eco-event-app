@@ -1,56 +1,30 @@
-package com.bytesw.consultadecuentas.security;
+package com.ecoeventos.security;
 
-import com.bytesw.consultadecuentas.bs.dao.SugarDAO;
-import com.bytesw.consultadecuentas.bs.dao.impl.SugarDAOImpl;
+import com.ecoeventos.bs.dao.impl.SugarDAOImpl;
+import com.ecoeventos.bs.dao.SugarDAO;
 import com.orm.SugarApp;
 
 import android.app.Application;
 
-public class SessionManager extends SugarApp {
+public class SessionManager extends Application{
 
-	private String token;
-	private String tokenType;
-	private String user;
-	
-	private SugarDAO sugarDAO;
+	private String username;
+	private Integer id;
 
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		sugarDAO = new SugarDAOImpl();
+	public String getUsername() {
+		return username;
 	}
 
-	@Override
-	public void onTerminate() {
-		super.onTerminate();
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getToken() {
-		return token;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-	}
-
-	public String getTokenType() {
-		return tokenType;
-	}
-
-	public void setTokenType(String tokenType) {
-		this.tokenType = tokenType;
-	}
-
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-	
-	public SugarDAO getSugarDAO(){
-		return this.sugarDAO;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }

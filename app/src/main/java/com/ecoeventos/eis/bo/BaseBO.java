@@ -1,4 +1,4 @@
-package com.bytesw.consultadecuentas.eis.bo;
+package com.ecoeventos.eis.bo;
 
 import com.orm.SugarRecord;
 

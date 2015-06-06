@@ -1,6 +1,5 @@
-package com.bytesw.consultadecuentas.view.activity;
+package com.ecoeventos.view.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,21 +8,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 
-import com.bytesw.consultadecuentas.R;
-import com.bytesw.consultadecuentas.bs.service.LogOutTask;
-import com.bytesw.consultadecuentas.bs.service.sugar.SugarService;
-import com.bytesw.consultadecuentas.bs.service.sugar.impl.SugarServiceImpl;
-import com.bytesw.consultadecuentas.eis.bo.BaseBO;
-import com.bytesw.consultadecuentas.security.SessionManager;
+import com.ecoeventos.R;
+import com.ecoeventos.security.SessionManager;
 
-import java.util.List;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public abstract class AbstractActivity extends ActionBarActivity {
 
 
     public static final String SCOPE = "trust";
-    public static final String  GRANT_TYPE = "client_credentials";
-    private SugarService service;
+    public static final String GRANT_TYPE = "client_credentials";
     public DisplayMetrics metrics = new DisplayMetrics();
     private boolean attached = false;
 
@@ -35,7 +31,6 @@ public abstract class AbstractActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        service = new SugarServiceImpl(getSession().getSugarDAO());
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         attached = true;
     }
@@ -58,15 +53,6 @@ public abstract class AbstractActivity extends ActionBarActivity {
      * verifica el hilo y maneja la exception y la muestra en el gui
      */
     public abstract void handleException(final Exception e);
-
-    public void closeSession() {
-        SessionManager sessionManager = (SessionManager) getApplicationContext();
-        logOutTask(this, sessionManager.getToken(), sessionManager.getTokenType()).execute();
-    }
-
-    private LogOutTask logOutTask(AbstractActivity parentActivity, String token, String tokenType) {
-        return new LogOutTask(parentActivity, token, tokenType);
-    }
 
     public SessionManager getSession() {
         return (SessionManager) getApplication();
@@ -107,38 +93,10 @@ public abstract class AbstractActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.logout_task) {
-            this.closeSession();
+            this.finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private SugarService getService() {
-        return service;
-    }
-
-    public <T> BaseBO save(BaseBO baseBO) {
-        return getService().save(baseBO);
-    }
-
-    public void update(BaseBO baseBO) {
-        getService().update(baseBO);
-    }
-
-    public void delete(BaseBO baseBO) {
-        getService().delete(baseBO);
-    }
-
-    public <T> BaseBO findById(Class<? extends BaseBO> clazz, Integer id) {
-        return getService().findById(clazz, id);
-    }
-
-    public <T> List<T> findAll(Class<? extends BaseBO> clazz) {
-        return getService().findAll(clazz);
-    }
-
-    public <T> List<T> findBySQLQuery(Class<? extends BaseBO> clazz, String query) {
-        return getService().findBySQLQuery(clazz, query);
     }
 
     public boolean isAttached() {
@@ -147,6 +105,23 @@ public abstract class AbstractActivity extends ActionBarActivity {
 
     public void setAttached(boolean attached) {
         this.attached = attached;
+    }
+
+    public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+            // Now we need to zero pad it if you actually want the full 32 chars.
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

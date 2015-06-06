@@ -67,4 +67,18 @@
         android:text="@string/app_screns_login_title"
         android:textColor="@color/icons" />
 
+    <Button
+        android:id="@+id/button_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button_autenticar"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button"
+        android:minHeight="48dip"
+        android:minWidth="300dip"
+        android:onClick="userRegister"
+        android:text="@string/app_button_register_title"
+        android:textColor="@color/icons" />
+
 </RelativeLayout><!-- From: file:/home/elioth010/AndroidStudioProjects/EcoEventos/app/src/main/res/layout/activity_autenticacion.xml -->

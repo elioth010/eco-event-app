@@ -1,6 +1,9 @@
-package com.bytesw.consultadecuentas.bs.service;
+package com.ecoeventos.bs.service;
 
+import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.http.HttpHeaders;
@@ -11,14 +14,13 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.bytesw.consultadecuentas.R;
-import com.bytesw.consultadecuentas.view.activity.AbstractActivity;
+import com.ecoeventos.R;
+import com.ecoeventos.view.activity.AbstractActivity;
 
 public abstract class AbstractGetTask<Params, Progress, Result> extends AsyncTask <Params, Progress, Result> {
 	
 	protected static final String TAG = "ActivityTask";
-    //"http://servicio.bytesw.com:8280/services/";
-	protected final String BASE_URL = "http://servicio.bytesw.com:8280/services";
+	protected final String BASE_URL = "http://173.208.154.230:8080/restful";
 	protected AbstractActivity parentActivity;
 	private ProgressDialog dialog;
 	
@@ -37,17 +39,6 @@ public abstract class AbstractGetTask<Params, Progress, Result> extends AsyncTas
 		super.onPostExecute(result);
 		dialog.dismiss();
 	}
-
-	public static HttpHeaders getHeaders(final String username, final String password) {
-		return new HttpHeaders() {
-			{
-				String auth = username + ":" + password;
-				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				String authHeader = "Basic " + new String(encodedAuth);
-				set("Authorization", authHeader);
-			}
-		};
-	}
 	
 	public static ClientHttpRequestFactory clientHttpRequestFactory(){
 		HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
@@ -56,20 +47,28 @@ public abstract class AbstractGetTask<Params, Progress, Result> extends AsyncTas
         return factory;
 	}
 
-	public static HttpHeaders getBearerHeaders(final String tokenType, final String token) {
-		return new HttpHeaders() {
-			{
-				String authHeader = tokenType+" " + token;
-				set("Authorization", authHeader);
-			}
-		};
-	}
-
 	protected void onError(String msg, Exception e) {
 		if (e != null) {
 			Log.e(TAG, "Exception: ", e);
 		}
 		parentActivity.handleException(e); // muestra mensaje de error
+	}
+
+	public static String getMD5(String input) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			byte[] messageDigest = md.digest(input.getBytes());
+			BigInteger number = new BigInteger(1, messageDigest);
+			String hashtext = number.toString(16);
+			// Now we need to zero pad it if you actually want the full 32 chars.
+			while (hashtext.length() < 32) {
+				hashtext = "0" + hashtext;
+			}
+			return hashtext;
+		}
+		catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="280dp"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     android:layout_marginTop="8dp"
@@ -18,142 +18,80 @@
         <ImageView
             android:id="@+id/cardview_background"
             android:layout_width="fill_parent"
-            android:layout_height="115dp"
-            android:src="@color/primary"
+            android:layout_height="190dp"
+            android:src="@drawable/ecobackground"
+            android:scaleType="fitXY"
             android:transitionName="@string/transition_account_view" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp" >
+            android:id="@+id/container_text">
 
             <TextView
-                android:id="@+id/card_product_name"
+                android:id="@+id/card_event_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:text="Event Test"
+                android:textColor="@color/background_material_dark" />
+
+            <TextView
+                android:id="@+id/card_event_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:text="Monetaria"
-                android:textColor="@color/icons" />
-
-            <TextView
-                android:id="@+id/card_product_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/card_product_name"
-                android:layout_marginTop="8dp"
-                android:text="01-001-000631-1"
-                android:textColor="@color/icons" />
-
-            <TextView
-                android:id="@+id/card_product_alias"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_alignLeft="@+id/card_product_number"
-                android:layout_below="@+id/card_product_number"
-                android:layout_marginTop="8dp"
-                android:ellipsize="end"
-                android:scrollHorizontally = "true"
-                android:text="Ejemplo CardView"
-                android:minLines = "2"
-                android:maxLines = "2"
-                android:textColor="@color/icons"   />
-
-            <TextView
-                android:id="@+id/card_product_money_available_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/card_product_money_available"
-                android:layout_marginTop="8dp"
-                android:text="Q0.00"
-                android:textColor="@color/secondary_text" />
-
-            <TextView
-                android:id="@+id/card_product_money_accountant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/card_product_money_withholding"
-                android:layout_below="@+id/card_product_alias"
-                android:layout_marginTop="46dp"
-                android:paddingLeft="82dp"
-                android:text="@string/card_product_money_accountant"
+                android:layout_below="@+id/card_event_name"
+                android:layout_marginTop="45dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Este es un evento de prueba"
                 android:textColor="@color/primary_text" />
 
             <TextView
-                android:id="@+id/card_product_money_accountant_value"
+                android:id="@+id/card_event_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/card_product_money_withholding"
-                android:layout_below="@+id/card_product_money_accountant"
-                android:layout_marginTop="8dp"
-                android:paddingLeft="82dp"
-                android:text="Q0.00"
+                android:layout_below="@+id/card_event_description"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="25/05/2015"
                 android:textColor="@color/secondary_text" />
 
             <TextView
-                android:id="@+id/card_product_money_reserve"
+                android:id="@+id/card_event_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/card_product_money_available_value"
-                android:layout_marginTop="8dp"
-                android:text="@string/card_product_money_reserve"
-                android:textColor="@color/primary_text" />
-
-            <TextView
-                android:id="@+id/card_product_money_reserve_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/card_product_money_reserve"
-                android:layout_marginTop="8dp"
-                android:text="Q0.00"
+                android:layout_below="@+id/card_event_description"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="210dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="Valoracion: "
                 android:textColor="@color/secondary_text" />
 
             <TextView
-                android:id="@+id/card_product_money_available"
+                android:id="@+id/card_event_rate_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/card_product_money_accountant"
-                android:layout_alignBottom="@+id/card_product_money_accountant"
-                android:layout_alignParentLeft="true"
-                android:text="@string/card_product_money_available"
-                android:textColor="@color/primary_text" />
-
-            <TextView
-                android:id="@+id/card_product_money_withholding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/card_product_money_reserve_value"
-                android:layout_centerHorizontal="true"
-                android:paddingLeft="82dp"
-                android:text="@string/card_product_money_withholding"
-                android:textColor="@color/primary_text" />
-
-            <TextView
-                android:id="@+id/card_product_money_withholding_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/card_product_money_reserve_value"
-                android:layout_alignBottom="@+id/card_product_money_reserve_value"
-                android:layout_alignLeft="@+id/card_product_money_withholding"
-                android:paddingLeft="82dp"
-                android:text="Q0.00"
+                android:layout_below="@+id/card_event_description"
+                android:layout_toRightOf="@+id/card_event_rate"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="3.0"
                 android:textColor="@color/secondary_text" />
 
-            <com.bytesw.consultadecuentas.view.res.CircularImageView
-                android:id="@+id/icon_account_type"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="83dp"
-                android:layout_toRightOf="@+id/card_product_money_withholding"
-                android:elevation="8dp"
-                android:src="@drawable/ic_ahorro" />
         </RelativeLayout>
     </RelativeLayout>
 

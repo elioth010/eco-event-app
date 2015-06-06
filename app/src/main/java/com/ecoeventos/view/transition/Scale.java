@@ -1,4 +1,4 @@
-package com.bytesw.consultadecuentas.view.transition;
+package com.ecoeventos.view.transition;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;

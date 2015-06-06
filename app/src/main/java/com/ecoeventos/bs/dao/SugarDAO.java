@@ -1,6 +1,6 @@
-package com.bytesw.consultadecuentas.bs.dao;
+package com.ecoeventos.bs.dao;
 
-import com.bytesw.consultadecuentas.eis.bo.BaseBO;
+import com.ecoeventos.eis.bo.BaseBO;
 
 import java.util.List;
 

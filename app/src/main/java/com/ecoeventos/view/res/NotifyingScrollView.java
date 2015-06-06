@@ -1,4 +1,4 @@
-package com.bytesw.consultadecuentas.view.res;
+package com.ecoeventos.view.res;
 
 import android.content.Context;
 import android.util.AttributeSet;
