@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/widget_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/custom_list_view" >
+
+        <ImageView
+            android:id="@+id/cardview_background"
+            android:layout_width="fill_parent"
+            android:layout_height="190dp"
+            android:src="@drawable/ecobackground"
+            android:scaleType="fitXY"
+            android:transitionName="@string/transition_account_view" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/container_text">
+
+            <TextView
+                android:id="@+id/card_event_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:text="Event Test"
+                android:textColor="@color/background_material_dark" />
+
+            <TextView
+                android:id="@+id/card_event_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_event_name"
+                android:layout_marginTop="45dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Este es un evento de prueba"
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:id="@+id/card_event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_event_description"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="25/05/2015"
+                android:textColor="@color/secondary_text" />
+
+            <TextView
+                android:id="@+id/card_event_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_event_description"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="210dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="Valoracion: "
+                android:textColor="@color/secondary_text" />
+
+            <TextView
+                android:id="@+id/card_event_rate_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_event_description"
+                android:layout_toRightOf="@+id/card_event_rate"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="3.0"
+                android:textColor="@color/secondary_text" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:layout_below="@+id/card_event_date"
+                android:layout_alignParentRight="true"
+                android:stepSize="1"
+                android:numStars="5"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:rating="0" />
+
+            <fragment
+                android:id="@+id/list_rate_container"
+                android:layout_below="@+id/ratingBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></fragment>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/home/elioth010/AndroidStudioProjects/EcoEventos/app/src/main/res/layout-v21/activity_detail_event.xml -->

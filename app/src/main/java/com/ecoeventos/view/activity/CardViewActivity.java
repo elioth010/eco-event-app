@@ -81,7 +81,7 @@ public class CardViewActivity extends AbstractActivity {
             ImageView bannerAccount = (ImageView) v.findViewById(R.id.cardview_background);
             final CardViewActivity activity = CardViewActivity.this;
 
-            Intent intent = new Intent(activity, CardViewActivity.class);
+            Intent intent = new Intent(activity, EventDetailActivity.class);
             intent.putExtra("evento", dto);
             activity.startActivity(intent);
         }

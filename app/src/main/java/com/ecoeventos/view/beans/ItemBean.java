@@ -1,30 +1,22 @@
-package com.bytesw.consultadecuentas.view.beans;
+package com.ecoeventos.view.beans;
 
 public class ItemBean {
 
-	private int icon;
 	private String title;
+	private String user;
 	private String detail;
-	private boolean stateIcon;
+	private String rate;
 
 	public ItemBean() {
 		super();
 	}
 
-	public ItemBean(int icon, String title, String detail, boolean statusIcon) {
+	public ItemBean(String title,String user, String detail, String rate) {
 		super();
-		this.icon = icon;
 		this.title = title;
+		this.user = user;
 		this.detail = detail;
-		this.stateIcon = statusIcon;
-	}
-
-	public int getIcon() {
-		return icon;
-	}
-
-	public void setIcon(int icon) {
-		this.icon = icon;
+		this.rate = rate;
 	}
 
 	public String getTitle() {
@@ -35,6 +27,14 @@ public class ItemBean {
 		this.title = title;
 	}
 
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
 	public String getDetail() {
 		return detail;
 	}
@@ -43,12 +43,11 @@ public class ItemBean {
 		this.detail = detail;
 	}
 
-	public boolean getStateIcon() {
-		return stateIcon;
+	public String getRate() {
+		return rate;
 	}
 
-	public void setStateIcon(boolean stateIcon) {
-		this.stateIcon = stateIcon;
+	public void setRate(String rate) {
+		this.rate = rate;
 	}
-
 }

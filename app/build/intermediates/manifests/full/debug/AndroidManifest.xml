@@ -80,6 +80,10 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name="com.ecoeventos.view.activity.A"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
             android:name="android.support.v7.widget.TestActivity"
             android:label="RecyclerViewTestActivity" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
