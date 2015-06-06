@@ -3,6 +3,8 @@
  */
 package com.ecoeventos.eis.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,6 +23,7 @@ public class EventDTO implements Serializable {
     private String description;
     private Date date;
     private String place;
+    @JsonIgnore
     private Double rate;
 
     /**

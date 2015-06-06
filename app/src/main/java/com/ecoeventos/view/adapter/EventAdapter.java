@@ -54,7 +54,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         eventViewHolder.eventName.setText(dto.getName());
         eventViewHolder.eventDescription.setText(dto.getDescription());
         eventViewHolder.eventDate.setText(dateFormat.format(dto.getDate()));
-        eventViewHolder.eventRate.setText(String.format("%.1f",dto.getRate()));
+        eventViewHolder.eventRateValue.setText(dto.getRate()==null?"0.0":String.format("%.1f",dto.getRate()));
     }
 
     public CallBack getCallBack() {

@@ -59,7 +59,9 @@ public class MainActivity extends AbstractActivity {
     }
 
     public void crearEventos(View v) {
-
+        Intent intent = new Intent(this, CrearEventoActivity.class);
+        this.startActivity(intent);
+        this.finish();
     }
 
     public void salir(View v) {

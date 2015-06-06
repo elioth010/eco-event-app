@@ -28,7 +28,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp">
+            android:layout_marginRight="16dp"
+            android:id="@+id/container_text">
 
             <TextView
                 android:id="@+id/card_event_name"
@@ -71,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_event_description"
                 android:layout_marginTop="16dp"
-                android:layout_marginLeft="430dp"
+                android:layout_marginLeft="210dp"
                 android:gravity="center_horizontal"
                 android:textStyle="bold"
                 android:textSize="14sp"

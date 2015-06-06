@@ -65,8 +65,7 @@ public class LoginTask extends AbstractGetTask<Void, Void, UserDTO> {
 			// Create the request body as a MultiValueMap
 			response = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity<Object>(null), UserDTO.class);
 			SessionManager manager = this.parentActivity.getSession();
-			manager.setUsername(user);
-			manager.setId(response.getBody().getId());
+			manager.setUser(response.getBody());
 			return response.getBody();
 		} catch (Exception ex) {
 			ex.printStackTrace();

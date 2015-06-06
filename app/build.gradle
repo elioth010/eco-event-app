@@ -43,6 +43,9 @@ dependencies {
     compile "commons-codec:commons-codec:1.2"
 
     compile 'com.nineoldandroids:library:2.4.0'
+
+    compile 'com.google.android.gms:play-services:7.5.0'
+
 }
 
 List<String> dirs = [

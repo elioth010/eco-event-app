@@ -12,18 +12,18 @@
         android:id="@+id/edit_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/button_autenticar"
         android:layout_alignEnd="@+id/edit_username"
         android:layout_alignLeft="@+id/edit_username"
         android:layout_alignRight="@+id/edit_username"
         android:layout_alignStart="@+id/edit_username"
-        android:layout_below="@+id/edit_username"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_action_secure"
         android:drawableStart="@drawable/ic_action_secure"
         android:ems="10"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical"
         android:hint="Password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -32,49 +32,55 @@
         android:textColorHint="@color/divider"
         android:theme="@style/AppBaseThemeDark" />
 
-    <!--
-         android:drawableLeft="@drawable/ic_action_secure"
-        android:drawableStart="@drawable/ic_action_secure"
-    -->
-
     <EditText
         android:id="@+id/edit_username"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_above="@+id/edit_password"
+        android:layout_below="@+id/include_toolbar"
         android:layout_alignLeft="@+id/button_autenticar"
         android:layout_alignRight="@+id/button_autenticar"
-        android:layout_below="@+id/include_toolbar"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/ic_action_people"
         android:drawableStart="@drawable/ic_action_people"
         android:ems="10"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical"
         android:hint="Usuario"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColor="@color/primary_text"
         android:textColorHint="@color/divider"
-        android:theme="@style/AppBaseThemeDark" >
+        android:theme="@style/AppBaseThemeDark"
+        android:layout_alignParentTop="false">
 
         <requestFocus />
     </EditText>
-
-    <!--
-         android:drawableLeft="@drawable/ic_action_person"
-        android:drawableStart="@drawable/ic_action_person"
-    -->
 
     <Button
         android:id="@+id/button_autenticar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_password"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custom_button"
         android:minHeight="48dip"
-        android:minWidth="400dip"
+        android:minWidth="300dip"
+        android:layout_above="@+id/button_registrar"
+        android:layout_marginBottom="@dimen/margin_standard"
         android:onClick="userAuthentication"
         android:text="@string/app_screns_login_title"
+        android:textColor="@color/icons" />
+
+    <Button
+        android:id="@+id/button_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_button"
+        android:minHeight="48dip"
+        android:minWidth="300dip"
+        android:onClick="userRegister"
+        android:layout_alignParentBottom="true"
+        android:text="@string/app_button_register_title"
         android:textColor="@color/icons" />
 
 </RelativeLayout>

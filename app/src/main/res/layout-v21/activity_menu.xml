@@ -29,7 +29,7 @@
         android:background="@drawable/custom_button"
         android:minHeight="48dip"
         android:minWidth="300dip"
-        android:onClick="userAuthentication"
+        android:onClick="crearEventos"
         android:text="@string/app_button_create_event_title"
         android:textColor="@color/icons"
         android:layout_below="@+id/button_ver_eventos"

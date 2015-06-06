@@ -29,7 +29,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:id="@+id/content_text">
+            android:id="@+id/container_text">
 
             <TextView
                 android:id="@+id/card_event_name"
